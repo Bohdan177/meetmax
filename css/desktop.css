@@ -296,6 +296,7 @@ body{
     font-size: 1.167em;
     font-weight: 400;
     width: 100%;
+    min-height: 150px;
 }
 .quiz__item-choice{
     background: #FFFFFC;
@@ -354,7 +355,7 @@ body{
     max-width: 1516px;
 }
 .hero-category .container{
-    padding: 0 260px 0 144px;
+    padding: 0 280px 0 144px;
 }
 .hero-category .quiz__item-title{
     font-size: 2.167em;
@@ -488,7 +489,7 @@ body{
         margin-top: 0;
     }
     .hero-category .container{
-        padding: 0 17vw 0 3vw;
+        padding: 0 18vw 0 3vw;
     }
     .hero-results .container{
         padding: 0 17vw 0 3vw;
