@@ -9,9 +9,11 @@ ul{
 }
 :root {
     --dark: #151727;
+    --black: #080B29;
     --white: #FFFFFC;
     --dark-violet: #1B0D4B;
     --main-gradient: linear-gradient(to right, #5C4DC1, #4233B4);
+    --gold-gradient: linear-gradient(to bottom, #E9E938, #FFFFDA);
 }
 body{
     font-weight: 400;
@@ -21,9 +23,25 @@ body{
 
     color: var(--dark);
 }
+.font-normal{
+    font-weight: 400;
+}
+.w-full{
+    width: 100%;
+}
+.bg-black{
+    background-color: var(--black);
+}
+.bg-gradient{
+    background: var(--main-gradient);
+}
+.bg-white{
+    background-color: var(--white);
+}
 .container{
     max-width: 1920px;
     margin: 0 auto;
+    width: 100%;
 }
 .hero{
     height: 100vh;
@@ -94,6 +112,7 @@ body{
     background-color: #E2DFFD;
     height: 8px;
     position: relative;
+    margin-bottom: 36px;
 }
 .hero__guide-progress span{
     background: var(--main-gradient);
@@ -123,11 +142,57 @@ body{
     font-weight: 400;
 
 }
+.hero__guide-text h4{
+    font-size: .8em;
+    padding: 0 0 8px;
+    font-weight: 400;
+
+}
+footer{
+    width: 100%;
+    margin-top: auto;
+}
+footer .hero__guide-footer{
+    margin-top: 10px;
+}
+form{
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+.hero__guide-footer form{
+    margin-top: 0;
+}
+form .select-circle{
+    border: 2px solid #CBC9DB;
+    position: relative;
+    background-color: transparent;
+
+}
+input[type="radio"]{
+    display: none;
+}
+/* Add a dot to the circle when the input is checked */
+input[type="radio"]:checked + .select-circle::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--main-gradient);
+    left: 0;
+}
+.hero__guide-footer input[type="radio"]:checked + .select-circle::after{
+    background: url(/img/like.png) no-repeat center top / cover;
+    background-size: 100%;
+}
 .hero__guide-footer{
+    width: -webkit-fill-available;
     border-radius: 16px;
     box-shadow: 0px 20px 46px 0px rgba(0, 0, 0, 0.25);
     padding: 24px;
-    width: 100%;
     margin-top: auto;
     display: flex;
     flex-wrap: wrap;
@@ -137,6 +202,8 @@ body{
 }
 .hero__guide-footer.black{
     background-color: #080B29;
+    gap: 8px;
+    padding: 16px;
 }
 .footer-title{
     width: 100%;
@@ -205,12 +272,37 @@ body{
     color: #fff;
     align-items: center;
 }
+.select-title.bg-white{
+    color: var(--dark);
+    opacity: .75;
+    border-radius: 16px;
+    padding: 24px;
+}
+.select-title.active{
+    opacity: 1;
+}
 .select-circle{
     width: 25px;
     height: 25px;
     border-radius: 99px;
     border: 5px solid #fff;
     background-color: #669BEC;
+}
+.select-title.bg-white .select-circle{
+    background-color: transparent;
+    border-color: #CBC9DB;
+    border-width: 2px;
+}
+.select-title.active .select-circle{
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.select-circle img{
+    width: 100%;
+}
+.select-title.active .select-circle{
+    border:none;
+    width: 20px;
+    height: 20px;
 }
 /* Central QUIZ */
 .hero.quiz .container, .hero.hero-category .container, .hero.hero-results .container{
@@ -232,6 +324,12 @@ body{
     font-size: 0.917em;
     font-weight: 300;
     padding: 40px 24px;
+}
+.quiz-qr.horizontal{
+    flex-direction: row-reverse;
+    background: none;
+    border: none;
+    align-items: flex-start;
 }
 .quiz-qr img{
     width: 174px;
@@ -289,6 +387,18 @@ body{
     gap: 20px;
     flex-wrap: wrap;
     margin-top: 33px;
+    align-items: flex-start;
+    justify-content: center;
+}
+.container .quiz{
+    padding-top: 240px
+
+}
+.quiz-new .container .quiz{
+    padding: 0;
+}
+.leaderboard .container .quiz{
+    padding: 0;
 }
 
 
@@ -348,14 +458,14 @@ body{
 
 /* Central category */
 .hero-category{
-    margin-top: 204px;
+    /* margin-top: 204px; */
 }
 .hero-category .quiz__item{
     width: 100%;
     max-width: 1516px;
 }
 .hero-category .container{
-    padding: 0 280px 0 144px;
+    /* padding: 0 280px 0 144px; */
 }
 .hero-category .quiz__item-title{
     font-size: 2.167em;
@@ -421,6 +531,7 @@ body{
 }
 .quiz__item.leaderboard .quiz__item-result .name, .quiz__item.leaderboard .quiz__item-result .result{
     font-size: 1.167em;
+    font-weight: 400;
 }
 .quiz__item.leaderboard .quiz__item-result{
     border-radius: 16px;
@@ -438,7 +549,7 @@ body{
     gap: 4px;
 }
 .hero-results .container {
-    padding: 0 260px 0 144px;
+    /* padding: 0 260px 0 144px; */
 }
 .hero-results .quiz {
    flex-wrap: nowrap;
@@ -447,6 +558,229 @@ body{
 
 /* END Central results */
 
+
+/* Cards */
+.cards-wrapper{
+    padding: 20px;
+    border-radius: 30px;
+}
+.cards{
+    width: 100%;
+}
+.cards__title{
+    display: flex;
+    color: var(--white);
+    align-items: center;
+    font-weight: normal;
+    font-size: 1em;
+    margin-bottom: 29px;
+    /* justify-content: space-between; */
+}
+.cards__title-index{
+    font-size: 2em;
+}
+.cards__title-text{
+    margin-left: 10px;
+}
+.cards__title-arrow{
+    margin-left: auto;
+}
+.cards__title-arrow svg{
+    width:  30px;
+}
+.card__item{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+   
+}
+.card__item.disabled .card__item-body, .card__item.disabled .chip {
+background: #CBC9DB;
+border-color: #FFFFFC;
+}
+.card__item.disabled .progress-bar{
+    opacity: 0.5;
+    border-color: #FFFFFC;
+}
+
+.card__item-dislike, .card__item-like{
+    width: 40px;
+    
+
+    
+}
+.card__item-dislike img, .card__item-like img {
+    width: 100%;
+    border-radius: 555px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.card__item-body{
+    background: var(--white);
+    padding: 9px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    position: relative;
+    border: 3px solid #CBC9DB;
+}
+.card__item-body-center{
+   width: 100%;
+    text-align: center;
+}
+.card__item-body-left, .card__item-body-right{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -10px;
+    font-size: 0.5em; 
+}
+
+.card__item-body-left{
+    left: 20px;
+}
+.card__item-body-right{
+    right: 20px;
+}
+.card__item-body-left .chip{
+    background: var(--white);
+    padding: 2px 7px;
+    border: 2px solid #CBC9DB;
+    border-radius: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.chip-counter span{
+    font-weight: 300;
+    font-style: italic;
+}
+.card__item-body-left .chip img{
+    width: 10px;
+    margin-right: 2px;
+}
+.card__item-body-right{
+    display: flex;
+}
+.like-item{
+    width: 16px;
+    border-radius: 555px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+.card__item-body-right .like-item:nth-last-child(1) {
+    transform: none; /* Last item: no transform */
+}
+
+.card__item-body-right .like-item:nth-last-child(2) {
+    transform: translateX(4px);
+}
+
+.card__item-body-right .like-item:nth-last-child(3) {
+    transform: translateX(8px);
+}
+
+.card__item-body-right .like-item:nth-last-child(4) {
+    transform: translateX(12px);
+}
+.card__answer{
+    background: var(--gold-gradient);
+    border-radius: 5px; 
+    padding: 6px; 
+    border: 2px solid;
+    font-style: italic;
+}
+
+/* End Cards */
+.central-title{
+    text-align: center;
+    color: #A599F5;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+.central-title span{
+    font-size: 1.375em;
+}
+
+.central-title h2{
+    font-weight: 400;
+    font-size: 2.4em;
+}
+.hero-category .chip{
+    font-size: 1.74em;
+}
+.hero-category .chip img{
+    width: 20px;
+}
+
+.progress-bar {
+    width: 90%; /* Adjust width as needed */
+    height: 30px;
+    background-color: #e0e0e0; /* Light grey background */
+    border-radius: 550px; /* Rounded corners */
+    margin: 0 auto; /* Center the bar */
+    overflow: hidden;
+    border: 2px solid #CBC9DB;
+}
+
+
+.progress-title{
+    font-size: 1.6em;
+    margin-bottom: 5px;
+}
+/* Inner progress styling */
+.progress {
+    height: 100%;
+     /* Adjust percentage based on progress */
+    background: linear-gradient(to bottom, #83BCFF, #B4D2F4); /* Gradient color */
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.6); /* Inner light effect */
+}
+.hero-category .card__item-body{
+    border-radius: 30px;
+}
+.hero-category .card__item-body-center{
+    margin-bottom: 20px;
+}
+.quiz .card__item .progress-title{
+    text-align: center;
+    font-size: 1em;
+    color: var(--black);
+}
+.quiz .card__item-body-left .chip{
+    color: var(--black)
+}
+.quiz .progress-bar{
+    background: var(--gold-gradient);
+}
+.quiz .card__item-body {
+    padding-bottom: 20px;
+}
+.quiz .card__item-body-left .chip img{
+    width: 18px;
+}
+.quiz .card__item-body-left .chip {
+    font-size: 1.3em;
+    gap: 3px;
+}
+.quiz-progress .quiz__item{
+    gap: 0;
+}
+.hero-category .central-title{
+    margin-top: 204px;
+}
+.hero-results .choices{
+    padding: 0;
+    border: 0;
+}
+.end-game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 @media screen and (max-width:1520px){
     body{
         font-size: 19px;
@@ -492,7 +826,7 @@ body{
         padding: 0 18vw 0 3vw;
     }
     .hero-results .container{
-        padding: 0 17vw 0 3vw;
+        /* padding: 0 17vw 0 3vw; */
     }
     .quiz__item-category .choice-progress {
         height: 20px;
@@ -561,6 +895,9 @@ body{
     .quiz{
         gap: 8px;
     }
+    .container .quiz {
+        padding-top: 100px;
+    }
     .quiz__item-choice{
         font-size: 16px;
     }
@@ -578,12 +915,24 @@ body{
     }
     .quiz__item{
         padding: 18px;
-        width: calc(25% - 20px);
+        width: calc(30% - 20px)
+    }
+    .quiz-new .quiz__item{
+        width: 28%
     }
     .quiz__item-result {
         border-radius: 17px;
         padding: 20px;
         font-size: 12px;
+    }
+    .card__item-body-left {
+        left: 10px;
+    }
+    .card__item-body-right {
+        right: 10px;
+    }
+    .card__item-dislike, .card__item-like {
+        width: 30px;
     }
     /* ENd central quiz media */
 }
