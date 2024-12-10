@@ -764,7 +764,7 @@ border-color: #FFFFFC;
     border: 2px solid;
     font-style: italic;
     margin: 0;
-    font-size: 1.3em;
+    font-size: 1.8em;
     justify-content: center;
     width: 100%;
 }
@@ -839,6 +839,10 @@ border-color: #FFFFFC;
         margin-bottom: 50px;
         /* max-width: 100px; */
     }
+    .card__item .card__answer{
+        font-size: 1.3em; 
+        padding: 3px;
+    }
 }
 @media screen and (max-width: 400px){
     .how__play {
@@ -847,5 +851,15 @@ border-color: #FFFFFC;
     .how__play-img img{
         margin-bottom: 30px;
         max-width: 100px;
+    }
+    .card__score{
+        width: 25%;
+    }
+    .card__item-body-center{
+        font-size: 1.1em;
+    }
+    .like-item{
+        width: 20px;
+        height: 20px;
     }
 }
