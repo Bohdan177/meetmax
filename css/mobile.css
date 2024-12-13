@@ -212,8 +212,14 @@ footer .inner{
 }
 
 .timer__icon svg {
-    fill: #A599F5;
+
     height: 18px;
+}
+.timer__icon svg path {
+    fill: #A599F5;
+}
+.timer__time{
+    color: #A599F5;
 }
 .select-circle{
     width: 14px;
@@ -322,7 +328,7 @@ input[type="radio"]:checked + .select-circle::after {
 
 .how__play.quiz .inner{
     background: var(--main-gradient);
-    padding: 16px;
+    padding: 21px 16px;
     border-radius: 16px;
     margin-top: 20px;
 }
@@ -666,6 +672,7 @@ border-color: #FFFFFC;
 
 .card__item-dislike, .card__item-like{
     width: 40px;
+    margin: auto;
     
 
     
@@ -727,7 +734,7 @@ border-color: #FFFFFC;
     font-style: italic;
 }
 .card__item-body-left .chip img{
-    width: 17px;
+    width: 12px;
     margin-right: 2px;
 }
 .card__item-body-right{
@@ -778,9 +785,7 @@ border-color: #FFFFFC;
 .how__play .inner{
     position: relative;
 }
-.inner .cards__title{
-    /* margin-bottom: 0; */
-}
+
 .cards__content{
     display: none;
     margin-top: 20px;
@@ -796,6 +801,12 @@ border-color: #FFFFFC;
     position: absolute;
     right: 40px;
     bottom: 5px;
+}
+.inner.likes__hidden .inner__likes{
+    display: none;
+}
+.inner.likes__hidden .cards__title{
+    margin-bottom: 0;
 }
 .like-item{
     background: url(/img/like.png) no-repeat center center / cover;

@@ -133,13 +133,15 @@ body{
     position: absolute;
     left: 0;
     height: 100%;
-    width: 35%;
+    width: var(--percent, 50%);
     transition: width 0.5s ease-in-out;
 }
+
 .hero__guide-image{
-    width: 21vh;
-    max-width: 306px;
-    padding: 7vh 0;
+    width: 16vh;
+    max-width: 200px;
+    margin: auto;
+    padding-top: 20px;
 }
 .hero__guide-image img{
     width: 100%
@@ -283,7 +285,7 @@ input[type="radio"]:checked + .select-circle::after {
     margin-top: -12px;
 }
 
-.timer__icon svg {
+.timer__icon svg path {
     fill: #A599F5;
 }
 .big__timer .timer__icon svg path {
@@ -825,6 +827,21 @@ border-color: #FFFFFC;
     justify-content: center;
     align-items: center;
 }
+@media screen and (max-height:1090px){
+    .leaderboard{
+        font-size: 19px;
+    }
+    .quiz__item.leaderboard .circle{
+        width: 16px;
+        height: 16px;
+    }
+}
+@media screen and (max-width:1600px){
+    .quiz__item.leaderboard .quiz__item-result {
+        padding: 12px 16px;
+        border-radius: 10px;
+    }
+}
 @media screen and (max-width:1520px){
     body{
         font-size: 19px;
@@ -889,10 +906,7 @@ border-color: #FFFFFC;
         border-width: 3px;
         margin-right: 8px;
     }
-    .quiz__item.leaderboard .quiz__item-result {
-        padding: 12px 16px;
-        border-radius: 10px;
-    }
+    
     .quiz__item-result .icon {
         font-size: 2.133em;
     }
