@@ -827,6 +827,12 @@ border-color: #FFFFFC;
     justify-content: center;
     align-items: center;
 }
+.inner.active .cards__title-arrow{
+    transform: rotate(180deg);
+}
+.card__item-dislike img.shadow-none, .card__item-like img.shadow-none{
+    box-shadow: none;
+}
 @media screen and (max-height:1090px){
     .leaderboard{
         font-size: 19px;
